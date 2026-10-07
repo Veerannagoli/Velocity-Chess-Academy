@@ -350,3 +350,218 @@ h2 em,h1 i{font-style:normal;color:#b99800}
   .video-thumb{height:45px}
   .footer-promise{font-size:14px!important}
 }
+
+
+/* ===== CLIENT POLISH UPDATE ===== */
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+section[id]{scroll-margin-top:105px}
+.section-label{font-size:13px;letter-spacing:.17em;color:#716f68}
+.section-label.light{color:#bdbbb5}
+.section h2,.method-heading h2{font-size:clamp(50px,5.7vw,82px);line-height:.98}
+.section-heading h2,.story-heading h2,.results-copy h2,.contact-copy h2{font-size:clamp(48px,5.2vw,76px)}
+.section-heading p,.story-card figcaption b,.results-copy p,.method-step p,.section-copy p{font-size:15px}
+.section-copy .lead{font-size:19px}
+
+/* Larger, clearer trust/stat typography */
+.trust-inner{min-height:138px}
+.trust-inner>div{padding:0 30px}
+.trust strong{font-size:32px}
+.trust span{font-size:13px;color:#b8b8b8;margin-top:7px;line-height:1.45}
+
+/* Programs: stronger hierarchy and readable supporting copy */
+.program{padding:32px;min-height:485px}
+.program-top{font-size:12px}
+.program-top span{font-size:14px}
+.program-top b{font-size:10px}
+.program-icon{font-size:48px;margin:38px 0 14px}
+.program h3{font-size:32px}
+.program p{font-size:16px;line-height:1.7}
+.program li{font-size:13px;padding:12px 0}
+.program a{font-size:13px}
+
+/* Method: reduce the overpowering colour overlap and improve contrast */
+.method-section{padding:135px 0;background:#111}
+.method-accent{right:-18%;top:-48%;width:48vw;height:110vh;background:var(--yellow);opacity:.88;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%,9% 52%);border-radius:0}
+.method-heading{max-width:850px}
+.method-heading h2{margin:20px 0 25px}
+.method-heading p{font-size:16px;color:#b8b5ad}
+.method-step{min-height:290px;padding-top:34px}
+.method-step>span{font-size:13px}
+.step-number{font-size:11px;color:#aaa69d;margin:24px 0 15px}
+.method-step h3{font-size:27px}
+.method-step p{font-size:15px;line-height:1.75;color:#bbb8b0}
+
+/* Section headings and image-story copy */
+.story-heading{margin-bottom:58px}
+.story-card figcaption{padding:28px}
+.story-card figcaption span{font-size:11px}
+.story-card figcaption b{font-size:20px}
+
+/* Results / credentials: more readable */
+.results-grid{gap:80px}
+.results-copy p{font-size:17px;line-height:1.8}
+.credential{padding-top:34px;padding-bottom:34px}
+.credential b{font-size:56px}
+.credential span{font-size:13px;color:#77746d;margin-top:8px}
+.quote-block p{font-size:30px}
+.quote-by{font-size:11px}
+
+/* New YouTube cards — no embedded/autoplay video */
+.academy-videos-section{background:#fff;padding-top:105px;padding-bottom:105px;border-top:1px solid #ebe7dd}
+.academy-videos-heading{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end;margin-bottom:42px}
+.academy-videos-heading h2{margin:16px 0 0}
+.academy-videos-heading h2 em{font-style:normal;color:#b99800}
+.academy-videos-heading p{max-width:520px;color:#6f6c64;font-size:16px;line-height:1.8;margin:0}
+.youtube-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.youtube-card{display:grid;grid-template-columns:38px 118px 1fr 34px;align-items:center;gap:14px;padding:10px;border:1px solid #ddd9cf;border-radius:18px;background:#fff;color:var(--ink);transition:transform .25s,box-shadow .25s,border-color .25s}
+.youtube-card:hover{transform:translateY(-4px);border-color:#aaa69b;box-shadow:0 18px 40px rgba(0,0,0,.10)}
+.youtube-number{font-family:"Manrope";font-size:12px;font-weight:800;color:#918d83;text-align:center}
+.youtube-thumb{position:relative;height:72px;border-radius:11px;overflow:hidden;background:#111}
+.youtube-thumb img{width:100%;height:100%;object-fit:cover}
+.youtube-thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.18))}
+.youtube-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:#111;font-size:10px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.youtube-copy{min-width:0}
+.youtube-copy b{display:block;font-family:"Manrope";font-size:14px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.youtube-copy small{display:block;color:#77746b;font-size:11px;margin-top:6px}
+.youtube-arrow{width:34px;height:34px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:900;font-size:15px}
+
+/* Footer: stronger readability and FHUB credit */
+.footer-bottom{font-size:12px;color:#96938a}
+.footer-bottom a{font-size:12px}
+.footer-bottom span:last-of-type{color:#d3d0c7;font-weight:800;letter-spacing:.08em}
+.footer-promise{font-size:17px!important}
+
+@media(max-width:850px){
+  .section h2,.method-heading h2{font-size:clamp(43px,8vw,64px)}
+  .trust-inner{min-height:auto}
+  .trust-inner>div{padding:26px 20px!important}
+  .trust strong{font-size:28px}
+  .trust span{font-size:13px}
+  .academy-videos-heading{grid-template-columns:1fr;gap:18px}
+  .youtube-cards{grid-template-columns:1fr}
+  .youtube-card{grid-template-columns:38px 118px 1fr 34px}
+  .method-accent{right:-38%;width:80vw}
+}
+@media(max-width:560px){
+  .section h2,.method-heading h2{font-size:44px}
+  .section-label{font-size:11px}
+  .program h3{font-size:28px}
+  .program p{font-size:15px}
+  .program li{font-size:12px}
+  .credential b{font-size:42px}
+  .credential span{font-size:12px}
+  .quote-block p{font-size:22px}
+  .academy-videos-section{padding-top:78px;padding-bottom:78px}
+  .academy-videos-heading p{font-size:14px}
+  .youtube-card{grid-template-columns:28px 92px 1fr 30px;gap:9px;padding:8px}
+  .youtube-thumb{height:58px}
+  .youtube-copy b{font-size:12px}
+  .youtube-copy small{font-size:10px}
+  .footer-bottom{font-size:11px}
+  .footer-bottom a{font-size:11px}
+}
+
+/* ===== FINAL CLIENT REFINEMENT ===== */
+/* Trust/stat section: larger, darker secondary text for stronger readability */
+.trust-inner{min-height:148px}
+.trust strong{font-size:35px}
+.trust span{font-size:15px;color:#e0e0e0;font-weight:500;line-height:1.45;margin-top:8px}
+
+/* Program feature lists: use true black instead of silver/grey */
+.program li,.featured li{color:#111!important}
+.program p{color:#3d3a34}
+
+/* Quote placed directly after the academy video cards */
+.video-quote{margin-top:48px;margin-bottom:0;background:var(--yellow);padding:42px 50px}
+.video-quote p{max-width:1020px}
+
+/* Results section: clear route back to the video section above */
+.results-video-link{margin-top:42px;display:flex;justify-content:flex-end}
+.results-video-link .button{font-size:13px;padding:15px 22px}
+
+@media(max-width:850px){
+  .trust-inner{min-height:auto}
+  .trust span{font-size:14px}
+  .video-quote{padding:34px 28px}
+  .results-video-link{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .trust strong{font-size:30px}
+  .trust span{font-size:13px}
+  .video-quote{margin-top:34px;padding:28px 22px}
+}
+
+/* ===== FINAL CLIENT REFINEMENT ===== */
+.trust-inner{min-height:148px}
+.trust strong{font-size:35px}
+.trust span{font-size:15px;color:#e0e0e0;font-weight:500;line-height:1.45;margin-top:8px}
+.program li,.featured li{color:#111!important}
+.program p{color:#3d3a34}
+.video-quote{margin-top:48px;margin-bottom:0;background:var(--yellow);padding:42px 50px}
+.video-quote p{max-width:1020px}
+.results-video-link{margin-top:42px;display:flex;justify-content:flex-end}
+.results-video-link .button{font-size:13px;padding:15px 22px}
+@media(max-width:850px){
+  .trust-inner{min-height:auto}
+  .trust span{font-size:14px}
+  .video-quote{padding:34px 28px}
+  .results-video-link{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .trust strong{font-size:30px}
+  .trust span{font-size:13px}
+  .video-quote{margin-top:34px;padding:28px 22px}
+}
+
+/* ===== FINAL CLIENT REFINEMENT ===== */
+.trust-inner{min-height:148px}
+.trust strong{font-size:35px}
+.trust span{font-size:15px;color:#e0e0e0;font-weight:500;line-height:1.45;margin-top:8px}
+.program li,.featured li{color:#111!important}
+.program p{color:#3d3a34}
+.video-quote{margin-top:48px;margin-bottom:0;background:var(--yellow);padding:42px 50px}
+.video-quote p{max-width:1020px}
+.results-video-link{margin-top:42px;display:flex;justify-content:flex-end}
+.results-video-link .button{font-size:13px;padding:15px 22px}
+@media(max-width:850px){
+  .trust-inner{min-height:auto}
+  .trust span{font-size:14px}
+  .video-quote{padding:34px 28px}
+  .results-video-link{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .trust strong{font-size:30px}
+  .trust span{font-size:13px}
+  .video-quote{margin-top:34px;padding:28px 22px}
+}
+
+/* ===== FINAL CLIENT REFINEMENT ===== */
+.trust-inner{min-height:148px}
+.trust strong{font-size:35px}
+.trust span{font-size:15px;color:#e0e0e0;font-weight:500;line-height:1.45;margin-top:8px}
+.program li,.featured li{color:#111!important}
+.program p{color:#3d3a34}
+.video-quote{margin-top:48px;margin-bottom:0;background:var(--yellow);padding:42px 50px}
+.video-quote p{max-width:1020px}
+.results-video-link{margin-top:42px;display:flex;justify-content:flex-end}
+.results-video-link .button{font-size:13px;padding:15px 22px}
+@media(max-width:850px){
+  .trust-inner{min-height:auto}
+  .trust span{font-size:14px}
+  .video-quote{padding:34px 28px}
+  .results-video-link{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .trust strong{font-size:30px}
+  .trust span{font-size:13px}
+  .video-quote{margin-top:34px;padding:28px 22px}
+}
+
+/* Reliable navigation target for the Videos section */
+#videos {
+  scroll-margin-top: 105px;
+  position: relative;
+}
+.video-nav-link {
+  font-weight: 700;
+}
