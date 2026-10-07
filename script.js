@@ -89,4 +89,73 @@ Thank you.`;
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     }, 250);
   });
+
+
+  // Cinematic Velocity video reel: one player, three videos, continuous playback.
+  const velocityVideos = [
+    "Ai_6k0K2uIs",
+    "Y8B9Qj0PVYA",
+    "ax3_Ryae_GY"
+  ];
+  const videoCards = [...document.querySelectorAll(".video-card")];
+  const videoCurrent = document.getElementById("videoCurrent");
+  let velocityPlayer = null;
+  let currentVideoIndex = 0;
+  let playerReady = false;
+
+  function setActiveVideo(index) {
+    currentVideoIndex = (index + velocityVideos.length) % velocityVideos.length;
+    videoCards.forEach((card, i) => card.classList.toggle("active", i === currentVideoIndex));
+    if (videoCurrent) videoCurrent.textContent = String(currentVideoIndex + 1).padStart(2, "0");
+  }
+
+  function playVelocityVideo(index, userSelected = false) {
+    setActiveVideo(index);
+    if (!velocityPlayer || !playerReady) return;
+    velocityPlayer.loadVideoById(velocityVideos[currentVideoIndex]);
+    // Muted autoplay is intentionally used so the reel can start automatically.
+    velocityPlayer.mute();
+    velocityPlayer.playVideo();
+    if (userSelected) {
+      // The viewer can turn sound on using YouTube's own controls after interacting.
+      velocityPlayer.unMute();
+    }
+  }
+
+  window.onYouTubeIframeAPIReady = function () {
+    const target = document.getElementById("velocityVideoPlayer");
+    if (!target) return;
+    velocityPlayer = new YT.Player("velocityVideoPlayer", {
+      videoId: velocityVideos[0],
+      playerVars: {
+        autoplay: 1,
+        controls: 1,
+        modestbranding: 1,
+        rel: 0,
+        playsinline: 1,
+        enablejsapi: 1,
+        origin: window.location.origin
+      },
+      events: {
+        onReady: (event) => {
+          playerReady = true;
+          event.target.mute();
+          event.target.playVideo();
+        },
+        onStateChange: (event) => {
+          if (event.data === YT.PlayerState.ENDED) {
+            playVelocityVideo(currentVideoIndex + 1);
+          }
+        }
+      }
+    });
+  };
+
+  videoCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const index = Number(card.dataset.videoIndex || 0);
+      playVelocityVideo(index, true);
+    });
+  });
+
 });

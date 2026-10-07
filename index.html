@@ -278,6 +278,47 @@
           <p>Strong chess is not about remembering more moves. It is about seeing the position clearly enough to make the right decision.</p>
           <span class="quote-by">— Velocity Chess Academy</span>
         </div>
+
+        <!-- VIDEO REEL -->
+        <div class="video-reel-section reveal" id="academy-video">
+          <div class="video-reel-heading">
+            <div>
+              <div class="section-label">VELOCITY IN MOTION</div>
+              <h3>See the academy. <em>Hear the coach.</em></h3>
+            </div>
+            <p>Watch selected Velocity Chess Academy moments featuring IM Krishna Teja. The reel moves automatically from one video to the next.</p>
+          </div>
+
+          <div class="video-stage">
+            <div class="video-screen">
+              <div class="video-glow"></div>
+              <div id="velocityVideoPlayer" class="youtube-player" aria-label="Velocity Chess Academy video player"></div>
+              <div class="video-live-label"><span></span> VELOCITY REEL</div>
+              <div class="video-counter"><span id="videoCurrent">01</span> / 03</div>
+            </div>
+          </div>
+
+          <div class="video-controls" aria-label="Academy videos">
+            <button class="video-card active" type="button" data-video-index="0">
+              <span class="video-number">01</span>
+              <span class="video-thumb"><img src="https://i.ytimg.com/vi/Ai_6k0K2uIs/hqdefault.jpg" alt="Velocity Chess Academy video preview"></span>
+              <span class="video-card-copy"><b>Velocity Chess Academy</b><small>Watch video</small></span>
+              <span class="video-play">▶</span>
+            </button>
+            <button class="video-card" type="button" data-video-index="1">
+              <span class="video-number">02</span>
+              <span class="video-thumb"><img src="https://i.ytimg.com/vi/Y8B9Qj0PVYA/hqdefault.jpg" alt="Velocity Chess Academy video preview"></span>
+              <span class="video-card-copy"><b>Training &amp; Chess</b><small>Watch video</small></span>
+              <span class="video-play">▶</span>
+            </button>
+            <button class="video-card" type="button" data-video-index="2">
+              <span class="video-number">03</span>
+              <span class="video-thumb"><img src="https://i.ytimg.com/vi/ax3_Ryae_GY/hqdefault.jpg" alt="Velocity Chess Academy video preview"></span>
+              <span class="video-card-copy"><b>Learn. Think. Compete.</b><small>Watch video</small></span>
+              <span class="video-play">▶</span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -357,7 +398,7 @@
   <footer class="footer">
     <div class="container footer-top">
       <a class="footer-logo" href="#home"><img src="assets/velocity-logo.png" alt="Velocity Chess Academy"></a>
-      <p>Professional chess coaching for players who want to think better, play stronger and compete with confidence.</p>
+      <p class="footer-promise">Professional chess coaching for players who want to think better, play stronger and compete with confidence.</p>
       <a class="footer-wa" href="https://wa.me/918500564155" target="_blank" rel="noopener">WhatsApp us ↗</a>
     </div>
     <div class="container footer-bottom">
@@ -367,6 +408,7 @@
     </div>
   </footer>
 
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="script.js"></script>
 </body>
 </html>
