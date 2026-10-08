@@ -728,3 +728,75 @@ section[id]{scroll-margin-top:105px}
   .hero-visual .achievement-controls{bottom:9px;}
   .hero-visual .achievement-arrow{width:31px;height:31px;font-size:15px;}
 }
+
+/* MOBILE HERO FIX — keep the achievement frame fully inside the phone viewport */
+@media (max-width: 560px){
+  .hero{
+    min-height:auto;
+    padding:28px 0 26px;
+  }
+  .hero-grid{
+    width:calc(100% - 28px);
+    margin-inline:auto;
+  }
+  .hero-copy{
+    padding-bottom:8px;
+  }
+  .hero-visual{
+    width:100%;
+    height:410px;
+    min-width:0;
+    overflow:visible;
+  }
+  .hero-visual .achievement-carousel{
+    left:50%;
+    right:auto;
+    top:8px;
+    transform:translateX(-50%);
+    width:min(300px, calc(100vw - 42px));
+    height:360px;
+    border-width:6px;
+    border-radius:155px 155px 24px 24px;
+  }
+  .hero-visual .achievement-slide{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center center;
+  }
+  .hero-visual .achievement-controls{
+    bottom:9px;
+    padding:5px 7px;
+    gap:7px;
+  }
+  .hero-visual .achievement-arrow{
+    width:32px;
+    height:32px;
+    font-size:15px;
+  }
+  .hero-visual .achievement-dots{
+    gap:5px;
+  }
+  .hero-visual .achievement-dots span{
+    width:7px;
+    height:7px;
+  }
+  .hero-visual .achievement-dots span.active{
+    width:18px;
+  }
+  .hero-yellow{
+    height:43%;
+  }
+  .hero-badge{
+    right:calc(50% - 166px);
+    top:52px;
+    width:70px;
+    height:70px;
+  }
+  .rating-pill{
+    right:calc(50% - 158px);
+    bottom:14px;
+    min-width:124px;
+    padding:10px 12px;
+  }
+}
