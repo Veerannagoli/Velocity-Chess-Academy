@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.getElementById("nav");
   const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
-  const sections = [...document.querySelectorAll("main section[id]")];
+  const sections = [...document.querySelectorAll("main section[id], .full-gallery[id]")];
   const form = document.getElementById("leadForm");
   const success = document.getElementById("formSuccess");
   const year = document.getElementById("year");
@@ -101,4 +101,44 @@ Thank you.`;
     }, 250);
   });
 
+});
+
+/* ===== ACHIEVEMENT CAROUSEL ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".achievement-carousel");
+  if (!carousel) return;
+
+  const slides = [...carousel.querySelectorAll(".achievement-slide")];
+  const dots = [...carousel.querySelectorAll(".achievement-dots span")];
+  const prev = carousel.querySelector(".achievement-prev");
+  const next = carousel.querySelector(".achievement-next");
+  let index = 0;
+  let timer;
+
+  const showSlide = (nextIndex) => {
+    index = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  };
+
+  const restartAuto = () => {
+    clearInterval(timer);
+    timer = setInterval(() => showSlide(index + 1), 4500);
+  };
+
+  prev?.addEventListener("click", () => {
+    showSlide(index - 1);
+    restartAuto();
+  });
+
+  next?.addEventListener("click", () => {
+    showSlide(index + 1);
+    restartAuto();
+  });
+
+  carousel.addEventListener("mouseenter", () => clearInterval(timer));
+  carousel.addEventListener("mouseleave", restartAuto);
+
+  showSlide(0);
+  restartAuto();
 });
