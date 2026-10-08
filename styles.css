@@ -800,3 +800,42 @@ section[id]{scroll-margin-top:105px}
     padding:10px 12px;
   }
 }
+
+
+/* ===== FINAL CLIENT SPACING + GALLERY LIGHTBOX ===== */
+/* Reduce only the unnecessary vertical gaps in the marked Method/Coach areas. */
+.method-section{padding-top:105px;padding-bottom:105px}
+.method-heading{margin-bottom:38px}
+.method-step{min-height:230px;padding-top:24px}
+.coach-gallery{height:510px}
+.gallery-main{height:410px}
+.gallery-small{height:210px}
+
+/* Click any full-gallery image to view it larger without leaving the page. */
+.full-gallery-grid img{cursor:zoom-in;transition:transform .25s,box-shadow .25s}
+.full-gallery-grid img:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.12)}
+.gallery-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(8,8,8,.88);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+.gallery-lightbox.open{opacity:1;visibility:visible;pointer-events:auto}
+.gallery-lightbox img{display:block;max-width:min(92vw,1200px);max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 24px 80px rgba(0,0,0,.45);background:#fff}
+.gallery-lightbox-close{position:absolute;top:20px;right:24px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#111;font-size:32px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.gallery-lightbox-close:hover{transform:scale(1.05)}
+body.lightbox-open{overflow:hidden}
+@media(max-width:850px){
+  .method-section{padding-top:85px;padding-bottom:85px}
+  .method-heading{margin-bottom:30px}
+  .method-step{min-height:205px;padding-top:22px}
+  .coach-gallery{height:460px}
+  .gallery-main{height:370px}
+  .gallery-small{height:195px}
+  .gallery-lightbox{padding:20px}
+  .gallery-lightbox img{max-width:94vw;max-height:82vh}
+}
+@media(max-width:560px){
+  .method-section{padding-top:70px;padding-bottom:70px}
+  .method-heading{margin-bottom:24px}
+  .method-step{min-height:auto;padding-top:20px;padding-bottom:24px}
+  .coach-gallery{height:390px}
+  .gallery-main{height:320px}
+  .gallery-small{height:170px}
+  .gallery-lightbox-close{top:12px;right:12px;width:42px;height:42px;font-size:28px}
+}

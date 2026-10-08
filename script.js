@@ -142,3 +142,41 @@ document.addEventListener("DOMContentLoaded", () => {
   showSlide(0);
   restartAuto();
 });
+
+
+/* ===== GALLERY IMAGE LIGHTBOX ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImage = document.getElementById("galleryLightboxImage");
+  const closeButton = lightbox?.querySelector(".gallery-lightbox-close");
+  const galleryImages = [...document.querySelectorAll(".full-gallery-grid img")];
+
+  if (!lightbox || !lightboxImage || !galleryImages.length) return;
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-open");
+    lightboxImage.src = "";
+  };
+
+  galleryImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt || "Velocity Chess Academy gallery image";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+    });
+  });
+
+  closeButton?.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
+});
